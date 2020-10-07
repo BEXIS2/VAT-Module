@@ -45,6 +45,7 @@ namespace BExIS.VAT.Entities.Data
 
     public class TypeOptions
     {
+        public bool clustered { get; set; }
     }
 
     #region symbology
@@ -183,7 +184,7 @@ namespace BExIS.VAT.Entities.Data
 
         public Columns columns { get; set; }
 
-        public string on_error { get { return "abort"}}
+        public string on_error { get { return "abort"; }}
     }
 
     public class Columns
@@ -201,9 +202,9 @@ namespace BExIS.VAT.Entities.Data
         //values??
         public IntervalType intervalType { get; set; }
         public String start { get; set; }
-        public String startFormat { get{return "yyyy-MM-ddTHH:mm:ss"}}
+        public String startFormat { get { return "yyyy-MM-ddTHH:mm:ss"; } }
         public String end { get; set; }
-        public String endFormat { get { return "yyyy-MM-ddTHH:mm:ss"} }
+        public String endFormat { get { return "yyyy-MM-ddTHH:mm:ss"; } }
 
     }
 
