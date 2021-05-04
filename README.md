@@ -13,7 +13,9 @@ The deails of a dataset will be extended by another tab. This tab can only be re
 
 - Have access to collections and biodiversity data centers, international data aggregators and environmental data, and integrate your own data!
 
-- For a detailed introduction, please have a look at our help section!
+
+VAT is part of the German Federation for Biological Data (GFBio, [www.gfbio.org](www.gfbio.org)), a sustainable, service oriented, national data infrastructure facilitating data sharing for biological and environmental research.
+
 
 
 ## Overview

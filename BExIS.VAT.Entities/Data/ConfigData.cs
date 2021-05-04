@@ -23,13 +23,14 @@ namespace BExIS.VAT.Entities.Data
 
     public enum IntervalType
     { 
+        None,
         Start,
         StartEnd,
         StartDuration,
         StartConstant
     }
 
-    public class ConfigDataJson
+    public class ConfigDataJson1
     {
         public string name { get; set; }
         public Operator Operator { get; set; }
