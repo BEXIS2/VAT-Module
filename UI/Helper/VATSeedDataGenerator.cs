@@ -29,10 +29,18 @@ namespace BExIS.Modules.VAT.UI.Helpers
                     f.Parent != null &&
                     f.Parent.Id.Equals(VAT.Id));
 
+                Feature API = features.FirstOrDefault(f =>
+                    f.Name.Equals("API") &&
+                    f.Parent != null &&
+                    f.Parent.Id.Equals(VAT.Id));
+
 
                 //Operations
                 operationManager.Create("VAT", "Admin", "*", AdminFeature);
                 operationManager.Create("VAT", "Home", "*", DisplayFeature);
+
+                operationManager.Create("VAT", "Config", "*", DisplayFeature);
+                operationManager.Create("API", "GeoRef", "*", API);
 
             }
         }
