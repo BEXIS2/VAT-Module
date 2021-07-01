@@ -1,0 +1,64 @@
+﻿@model BExIS.Modules.VAT.UI.Models.EditModel
+@{
+
+    ViewBag.Title = ViewData["Title"];
+}
+
+@using (Ajax.BeginForm("Edit", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "container" }))
+{
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(m => m.Id);
+
+
+    <table class="bx-table-form">
+        <tr>
+            <td>
+                Longitude
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.Longitude, null, "Select a type", new { @class = "bx-dropdown" })
+                @Html.ValidationMessageFor(m => m.Longitude)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Latitude
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.Latitude, null, "Select a type", new { @class = "bx-dropdown" })
+                @Html.ValidationMessageFor(m => m.Latitude)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                DataType
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.DataType, null, "Select a type", new { @class = "bx-dropdown" })
+                @Html.ValidationMessageFor(m => m.DataType)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Time
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.Time, null, "Select a type", new { @class = "bx-dropdown" })
+                @Html.ValidationMessageFor(m => m.Time)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SpatialReference
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.SpatialReference, null, "Select a spatial reference system.", new { @class = "bx-dropdown" })
+                @Html.ValidationMessageFor(m => m.SpatialReference)
+            </td>
+        </tr>
+    </table>
+
+    <button style="margin-right: 1px" type="submit" id="button_edit_save" class="bx-button action">Save</button>
+
+}

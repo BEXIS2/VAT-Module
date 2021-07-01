@@ -1,0 +1,55 @@
+﻿@model BExIS.Modules.VAT.UI.Models.EditModel
+@{
+
+    ViewBag.Title = ViewData["Title"];
+
+    long id = (long)ViewData["Id"];
+}
+
+@Ajax.ActionLink("Edit", "Edit", "Home", new { @id }, new AjaxOptions() { UpdateTargetId = "container", InsertionMode = InsertionMode.Replace }, new { @class = "bx-button action" })
+
+<table class="bx-table-form">
+    <tr>
+        <td>
+            Longitude
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.Longitude)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Latitude
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.Latitude)
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DataType
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.DataType)
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Time
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.Time)
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            SpatialReference
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.SpatialReference)
+        </td>
+    </tr>
+</table>
