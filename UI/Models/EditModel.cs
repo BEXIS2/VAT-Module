@@ -23,6 +23,9 @@ namespace BExIS.Modules.VAT.UI.Models
 
         public string  Time { get; set; }
 
+        public string TimeFormat { get; set; }
+
+
         [Required(ErrorMessage = "SpatialReference.")]
         public string  SpatialReference { get; set; }
 
@@ -32,6 +35,7 @@ namespace BExIS.Modules.VAT.UI.Models
             Latitude = "";
             DataType = "";
             Time = "";
+            TimeFormat = "";
             SpatialReference = "";
         }
     }

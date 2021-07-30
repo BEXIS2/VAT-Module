@@ -1,6 +1,11 @@
-﻿
+﻿@model long?
+@using BExIS.UI.Helpers;
 @{
     ViewBag.Title = "Index2";
+}
+
+@{
+    Layout = "~/Themes/Default/Layouts/_svelteLayout.cshtml";
 }
 
 <h2>Index2</h2>
@@ -8,10 +13,7 @@
 
 @section scripts
 {
-    <script src="@Url.Content("~/Areas/VAT/UI/Scripts/svelte/bundle.js")" type="text/javascript"></script>
+    @Html.SvelteVatScript()
 }
-<link href="@Url.Content("~/Areas/VAT/UI/Scripts/svelte/bundle.css")" rel="stylesheet" type="text/css" />
 
-<div id="ConfigForm" >
-    
-</div>
+@Html.SvelteVatForm(Model)

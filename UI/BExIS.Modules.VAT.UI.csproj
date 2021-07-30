@@ -163,9 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\ConfigController .cs" />
+    <Compile Include="Controllers\ConfigController.cs" />
     <Compile Include="Controllers\GeoRefController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Helper\SvelteHtmlHelper.cs" />
     <Compile Include="Helper\GeoConfigHelper.cs" />
     <Compile Include="Helper\VATSeedDataGenerator.cs" />
     <Compile Include="Models\EditModel.cs" />
@@ -174,24 +175,28 @@
     <Compile Include="VATModule.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\geoengine.js" />
+    <Content Include="Scripts\svelte\vat.js" />
     <Content Include="VAT.Settings.xml" />
     <Content Include="Content\Site.css" />
     <Content Include="VAT.Manifest.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -249,6 +254,10 @@
     <ProjectReference Include="..\..\..\..\..\Components\DLM\BExIS.Dlm.Services\BExIS.Dlm.Services.csproj">
       <Project>{c4ca0a99-0af3-4372-a9b7-b9073599bd8b}</Project>
       <Name>BExIS.Dlm.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Components\IO\BExIS.IO.DataType.DisplayPattern\BExIS.IO.DataType.DisplayPattern.csproj">
+      <Project>{8b2ec2b0-6870-456b-be2d-b0fb4ea68d83}</Project>
+      <Name>BExIS.IO.DataType.DisplayPattern</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\Components\IO\BExIS.IO.Transform.Validation\BExIS.IO.Transform.Validation.csproj">
       <Project>{c8a05313-b960-406e-92ec-c1e5b3f47fcd}</Project>

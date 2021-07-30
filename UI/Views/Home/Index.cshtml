@@ -1,5 +1,11 @@
 @model BExIS.Modules.VAT.UI.Models.EditModel
 
+@section scripts
+{
+    <script src="@Url.Content("~/Areas/VAT/UI/Scripts/geoengine.js")" type="text/javascript"></script>
+
+}
+
 <div id="container">
 
     @Html.Partial("_view", Model)

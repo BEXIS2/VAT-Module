@@ -1,0 +1,71 @@
+[
+    {
+      "label": "A",
+      "description":"description of a",
+      "count": 2,
+      "value": "A",
+      "active":false,
+      "href":"http://www.google.de",
+      "items": [
+        {
+        "label": "A1",
+        "description":"description of a1",
+        "count": 1,
+        "value": "1",
+        "active":false,
+        "items": []
+        },
+        {
+        "label": "A2",
+        "description":"description of a2",
+        "count": 1,
+        "value": "2",
+        "active":false,
+        "items": [
+            {
+            "label": "underlaying",
+            "description":"description of underlaying",
+            "count": 1,
+            "value": "underlaying",
+            "active":false,
+            "items": []
+            }
+          ]
+        }
+      ]
+  },
+  {
+   "label": "B",
+   "description":"description of b",
+   "count": 223,
+   "value": "B",
+   "active":false,
+   "items": [
+    {
+     "label": "B1",
+     "description":"description of b1",
+     "count": 23,
+     "value": "B1",
+     "active":false,
+     "items": []
+    },
+    {
+     "label": "B2",
+     "description":"description of b2",
+     "count": 200,
+     "value": "B2",
+     "active":false,
+     "items": [
+      {
+      "label": "underlaying B",
+      "description":"description of underlaying",
+      "count": 1,
+      "value": "underlaying B",
+      "active":false,
+      "items": []
+     }
+    ]
+    }
+   ]
+  }
+]

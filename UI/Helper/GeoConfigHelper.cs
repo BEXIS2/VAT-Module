@@ -97,6 +97,9 @@ namespace BExIS.Modules.VAT.UI.Helper
                 XmlDatasetHelper xmlHelpers = new XmlDatasetHelper();
                 layerName = xmlHelpers.GetInformation(dataset, NameAttributeValues.title);
 
+                TimeObject to = new TimeObject(80000,model.Time, new Format() { format = "custom", customFormat = model.TimeFormat });
+
+
                 GeoEngine geoEngine = new GeoEngine(
                         model.Latitude,
                         model.Longitude,
@@ -104,7 +107,8 @@ namespace BExIS.Modules.VAT.UI.Helper
                         model.SpatialReference,
                         layerName,
                         GetTypeSortedVariables(dataset.DataStructure.Id),
-                        GetVariablesWithType(dataset.DataStructure.Id)
+                        GetVariablesWithType(dataset.DataStructure.Id),
+                        to
                     );
 
                 string path = Path.Combine(AppConfiguration.DataPath,"Datasets",model.Id.ToString(),"geoengine.json");
@@ -240,6 +244,8 @@ namespace BExIS.Modules.VAT.UI.Helper
                 model.Longitude = geoEngine.loadingInfo.y;
                 model.DataType = geoEngine.resultDescriptor.dataType;
                 model.SpatialReference = geoEngine.resultDescriptor.spatialReference;
+                model.Time = geoEngine.loadingInfo.time?.start.startField;
+                model.TimeFormat = geoEngine.loadingInfo.time?.start.startFormat.customFormat;
             }
 
             model.Id = id;

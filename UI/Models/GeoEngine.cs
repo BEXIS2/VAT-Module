@@ -87,6 +87,10 @@ namespace BExIS.Modules.VAT.UI.Models
             fileName = layerName + ".txt;";
             forceOgrTimeFilter = false;
             onError = "ignore";
+            time = new Time();
+
+            if (start!=null) time.start = start;
+            if (end!=null) time.end = end;
         }
     }
 
