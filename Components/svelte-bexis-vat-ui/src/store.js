@@ -5,6 +5,16 @@ export const ApiUrl = "https://localhost:44345/";
 
 // data
 
+export const treeviewData = writable([]);
+
+const fetchTreeviewData = async () => {
+   const url = ApiUrl +'vat/test/GetTreeviewData';
+   const res = await fetch(url);
+   fetchTreeviewData.set(await res.json());
+
+}
+fetchTreeviewData();
+
 export const model = writable({
   Id :0,
   Longitude :'',
@@ -59,3 +69,5 @@ const fetchSpatialReferences = async () => {
 }
 
 fetchSpatialReferences();
+
+

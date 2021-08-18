@@ -28,13 +28,6 @@ namespace BExIS.Modules.VAT.UI.Controllers
 
         }
 
-        public ActionResult Index2(long id)
-        {
-
-            return View("Index2",id);
-
-        }
-
         // GET: Help
         public ActionResult IndexPartial(long id)
         {
@@ -89,24 +82,6 @@ namespace BExIS.Modules.VAT.UI.Controllers
             //JsonConvert.SerializeObject(model);
 
             return PartialView("_edit", model);
-
-        }
-
-        public JsonResult Edit2(long id)
-        {
-
-            ViewData["Title"] = PresentationModel.GetViewTitleForTenant("VAT", this.Session.GetTenant());
-
-            EditModel model = new EditModel();
-
-            //set all important ViewData 
-            setViewData(id);
-
-            // load geoData if exist and set it to the model
-            GeoConfigHelper configHelper = new GeoConfigHelper();
-            model = configHelper.Read(id);
-
-            return Json(model, JsonRequestBehavior.AllowGet);
 
         }
 

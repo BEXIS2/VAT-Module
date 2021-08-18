@@ -6,10 +6,10 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
-    "install bexis2 ui core": "npm install --save-dev C:\\Users\\admin\\AppData\\Roaming\\npm\\node_modules\\@bexis2\\svelte-bexis-core-ui"
+    "install bexis2 ui core": "npm install --save-dev C:\\Users\\admin\\AppData\\Roaming\\npm\\node_modules\\@bexis2\\svelte-bexis2-core-ui"
   },
   "devDependencies": {
-    "@bexis2/svelte-bexis-core-ui": "file:../../../../../../../../../../../AppData/Roaming/npm/node_modules/@bexis2/svelte-bexis-core-ui",
+    "@bexis2/svelte-bexis2-core-ui": "file:../../../../../../../../../../../AppData/Roaming/npm/node_modules/@bexis2/svelte-bexis2-core-ui",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "rollup": "^2.3.4",
