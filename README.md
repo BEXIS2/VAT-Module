@@ -1,5 +1,5 @@
 [![N|Solid](https://github.com/BExIS2/Documents/blob/master/Images/Logo/Logo_BEXIS_rgb_113x28.jpg?raw=true)](http://BExIS2.uni-jena.de/) 
-# Module VAT - The Visualization, Analysis and Transformation System
+# Module VAT - Geoengine - The Visualization, Analysis and Transformation System
 
 
 > This BEXIS 2 module extends the system with an interface to the [Geoengine](https://www.geoengine.de/). 
@@ -109,19 +109,19 @@ API´S must also be provided so that the information can be loaded. -> [go to ap
 
 The details view of a dataset will be extended by another tab. This tab can only be reached if you have read rights to the dataset or the dataset is public.
 
-![view dataset](./_img/view.png "Title")
+![view dataset](./_img/view.PNG "Title")
 
 if you have edit rights, you can customise the geo ref information for a dataset record.
 
 ### Preparing the data in BEXIS2 for Geoengine ###
 The required values in geoengine.json are partly provided automatically by BEXIS2. However, a small part of the information must still be entered by the user so that the system can understand what the important columns for X,Y and time are.
 
-User
+**User**
 The users who have write access to datasets have the possibility to edit the geoengine.json. This is possible in the UI at Show Dataset. A form is loaded. The variables are available for selection as dropdowns.
 
 The user must define the following variables.
 
-- Logitude
+- Longitude
 - Latitude
 - Time
 - Format
@@ -133,17 +133,25 @@ If you have edit rights on a dataset and the VAT module is activated, an additio
 
 Not all data shown in the geoengine.json has to be selected by the user. Most of the information is set by the system.
 
-![edit dataset](./_img/edit.png "Title")
+![edit dataset](./_img/edit.PNG "Title")
 
 When selecting the time, the system checks in the background whether the selected column is a DateTime. If it is, the system checks whether a display format exists and then automatically inserts it into the next row Format.
 
+**System**
+The module has a settings file in which the selection of the DataType & - Spatial Reference can be defined.
+
+![settings dataset](./_img/settings.PNG "Title")
+
+The following information is read out from the system without the user having to make any entries.
+
+- list of all variables
+- membership of data types
+- filename
+- set x & y
 
 ## APIS
 
 Furthermore, the APIs are extended by two additional APIs.
-
-
-## Settings
 
 Geoengine (VAT) needs 3 apis to get the data from BEXIS 2.
 
