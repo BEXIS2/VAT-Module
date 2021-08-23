@@ -89,17 +89,16 @@
         console.log(Id);
 
         $.get("/vat/config/DisplayPattern/", { id, variable }, function (response) {
-            alert(response);
 
             var tf = $('#TimeFormat');
             tf.val(response);
 
-            if (response === "") {
-                tf.prop("disabled", false);
-            }
-            else {
-                tf.prop("disabled", true);
-            }
+            //if (response === "") {
+            //    tf.prop("disabled", false);
+            //}
+            //else {
+            //    tf.prop("disabled", true);
+            //}
         })
     })
 </script>

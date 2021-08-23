@@ -23,7 +23,7 @@ namespace BExIS.Modules.VAT.UI.Helper
         /// <returns></returns>
         public SelectList GetDataTypes()
         {
-            SettingsHelper settingsHelper = new SettingsHelper("Vat");
+            SettingsHelper settingsHelper = new SettingsHelper("VAT");
             string values = settingsHelper.GetValue("DataTypes");
 
             if (string.IsNullOrEmpty(values)) return new SelectList(new List<string>());
@@ -101,8 +101,8 @@ namespace BExIS.Modules.VAT.UI.Helper
 
 
                 GeoEngine geoEngine = new GeoEngine(
-                        model.Latitude,
                         model.Longitude,
+                        model.Latitude,
                         model.DataType,
                         model.SpatialReference,
                         layerName,

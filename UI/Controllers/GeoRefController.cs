@@ -19,13 +19,21 @@ namespace BExIS.Modules.VAT.UI.Controllers
 {
     public class GeoRefController : ApiController
     {
-        //[BExISApiAuthorize]
-        //[GetRoute("api/dataset/georef/")]
+
+        /// <summary>
+        /// return only ids of datasets that have a geo reference and the user hav acces to read
+        /// </summary>
+        /// <returns></returns>
         [GetRoute("api/georef/")]
-        // GET api/<controller>
-        public IEnumerable<GeoRefViewObject> Get()
+        public List<long> Get()
         {
-            List<GeoRefViewObject> ids = new List<GeoRefViewObject>();
+            // get token from the request
+            string token = this.Request.Headers.Authorization?.Parameter;
+
+            // flag for the public dataset check
+            bool isPublic = false;
+
+            List<long> ids = new List<long>();
 
             using (var datasetManager = new DatasetManager())
             {
@@ -33,14 +41,35 @@ namespace BExIS.Modules.VAT.UI.Controllers
 
                 foreach (var id in datasetIds)
                 {
-                    var filepath = Path.Combine(AppConfiguration.DataPath, "Datasets", id.ToString(), "geoengine.json");
+                    using (EntityPermissionManager entityPermissionManager = new EntityPermissionManager())
+                    using (EntityManager entityManager = new EntityManager())
+                    using (UserManager userManager = new UserManager())
+                    {
+                        // load the entity id of the e.g. is it a sample or dataset or publication
+                        long? entityTypeId = entityManager.FindByName(typeof(Dataset).Name)?.Id;
+                        entityTypeId = entityTypeId.HasValue ? entityTypeId.Value : -1;
 
-                    if (File.Exists(filepath)) ids.Add(new GeoRefViewObject() { DatasetId = id, hasGeoReference = true });
-                    else ids.Add(new GeoRefViewObject() { DatasetId = id, hasGeoReference = false });
+                        // if the subject is null and one entry exist, means this dataset is public
+                        isPublic = entityPermissionManager.Exists(null, entityTypeId.Value, id);
+
+                        // load user based on token
+                        User user = userManager.Users.Where(u => u.Token.Equals(token)).FirstOrDefault();
+
+                        if (isPublic || user != null)
+                        {
+                            if (isPublic || entityPermissionManager.HasEffectiveRight(user.Name, typeof(Dataset), id, RightType.Read))
+                            {
+                                var filepath = Path.Combine(AppConfiguration.DataPath, "Datasets", id.ToString(), "geoengine.json");
+
+                                if (File.Exists(filepath))
+                                {
+                                    ids.Add(id);
+                                }
+                            }
+                        }
+                    }
                 }
-
             }
-
 
             return ids;
         }
@@ -138,9 +167,4 @@ namespace BExIS.Modules.VAT.UI.Controllers
         }
     }
 
-    public class GeoRefViewObject
-    {
-        public long DatasetId { get; set; }
-        public bool hasGeoReference { get; set; }
-    }
 }

@@ -4,8 +4,6 @@
     ...
   </Description>
 	<Assemblies>
-    <Assembly fullName="BExIS.VAT.Entities" role=""/>
-    <Assembly fullName="BExIS.VAT.Services" role=""/>
 	</Assemblies>
 	<Dependencies>
 		<!--<Dependency moduleId="dcm" version="*.*.*" />-->
