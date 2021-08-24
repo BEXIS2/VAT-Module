@@ -168,3 +168,10 @@ https://train.bexis2.uni-jena.de/api/georef/4
 https://train.bexis2.uni-jena.de/api/data/4
 
 ```
+
+## Registration as data provider in GeoEngine
+
+An administrator of geoengine creates a file with all information about a BEXIS 2 instance.
+
+please contact: info@geoengine.de
+
